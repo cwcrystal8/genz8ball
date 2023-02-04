@@ -207,15 +207,15 @@ button:hover {
   }
 
   #answer-page input {
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
+    width: 100%;
     border: slategrey 1px solid;
     border-radius: 20px;
     padding: 10px 20px;
     margin-bottom: 30px;
     text-align: left;
     color: teal;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .container{
