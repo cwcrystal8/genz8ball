@@ -48,7 +48,7 @@ const RESPONSES = [
   "cant believe you caught me in 4k sayin no",
   "my malewives say maybe",
   "not me saying yes",
-  "no bu t why do i kinda think yes",
+  "nobu t why do i kinda think yes",
   "your question is sending me hahaha i'm sent",
   "uh oh, big yikes ahead",
   "manifesting a universe where you dont do that",
@@ -57,6 +57,7 @@ const RESPONSES = [
 ];
 
 interface AppStateType {
+  counter: number;
   question: String;
   askedQuestion: Boolean;
 }
@@ -65,6 +66,7 @@ class App extends Component<{}, AppStateType>  {
   constructor(props) {
     super(props);
     this.state = {
+      counter: 0,
       question: "",
       askedQuestion: false
     }
@@ -75,27 +77,45 @@ class App extends Component<{}, AppStateType>  {
       return (
         <div id="homepage">
           
-          <p className='heading'>Gen Z 8 Ball</p>
-          <p className='subtitle'>Discover the sage wisdom only possessed by those born after 1997</p>
-          <input type="text" placeholder="what's poppin fam" 
+          <p className='heading'>✨ Gen Z 8 Ball ✨</p>
+          <p className='subtitle'>discover the sage wisdom only possessed by those born after 1997</p>
+          <input key = {this.state.counter.toString()} type="text" placeholder="what's poppin fam" 
                   onChange={(e) => {this.setState({question: e.target.value})}}
-                  onKeyDown={(e) => {if(e.key === 'Enter') {this.setState({askedQuestion: true})}}}
+                  onKeyDown={(e) => {if(e.key === 'Enter') {this.setState({counter: this.state.counter + 1, askedQuestion: true})}}}
+                  autoFocus = {true}
           ></input>
-          <button onClick={() => {this.setState({askedQuestion: true})}}
-          >Send DM</button>
+          <button onClick={() => {this.setState({counter: this.state.counter + 1, askedQuestion: true})}}
+          >send DM</button>
         </div>
       );
     }
     else{
+      var question = this.state.question;
       let answer = RESPONSES[Math.floor(Math.random()*RESPONSES.length)];
+      var today = new Date();
+      var ampm = today.getHours() >= 12 ? 'pm' : 'am';
+      var time = today.getHours() + ":" + today.getMinutes() + ' ' + ampm;
       return (
         <div id="answer-page">
-          <div id="dialog-box">
-            <p id="answer-header">Gen Z 8 Ball</p>
-            <p id="question">{this.state.question}</p>
-            <p id="answer">{answer}</p>
-          </div>
-          <button onClick={() => {this.setState({askedQuestion: false, question: ""})}}>Ask Another</button>
+          <p className='heading'>✨ Gen Z 8 Ball ✨</p>
+          <section id="dialog-box">
+            <p id="answer-header"> 🎱 zaddy </p>
+            <section id="dialog-body">
+              <p id="question">{question}</p>
+              <p id="answer">{answer}</p>
+              <p id="answer-decor">yeeted {time}</p>
+
+              <input key = {this.state.counter.toString()} type="text" placeholder='ask another question'
+                  onKeyDown={(e) => {if(e.key === 'Enter') {this.setState(
+                    {
+                      question: (e as any).target.value,
+                      counter: this.state.counter + 1
+                    })
+                  }
+                  }}
+            ></input>
+            </section>
+          </section>
         </div>
       )
     }
