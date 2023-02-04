@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/genz8ball/static/css/main.3b9da46a.css",
-    "main.js": "/genz8ball/static/js/main.98f0e593.js",
+    "main.css": "/genz8ball/static/css/main.69e35e61.css",
+    "main.js": "/genz8ball/static/js/main.6c9b82ee.js",
     "index.html": "/genz8ball/index.html",
-    "main.3b9da46a.css.map": "/genz8ball/static/css/main.3b9da46a.css.map",
-    "main.98f0e593.js.map": "/genz8ball/static/js/main.98f0e593.js.map"
+    "main.69e35e61.css.map": "/genz8ball/static/css/main.69e35e61.css.map",
+    "main.6c9b82ee.js.map": "/genz8ball/static/js/main.6c9b82ee.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b9da46a.css",
-    "static/js/main.98f0e593.js"
+    "static/css/main.69e35e61.css",
+    "static/js/main.6c9b82ee.js"
   ]
 }
