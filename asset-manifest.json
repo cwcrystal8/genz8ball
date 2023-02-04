@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/genz8ball/static/css/main.fb3a7ce8.css",
+    "main.js": "/genz8ball/static/js/main.2d60663c.js",
+    "index.html": "/genz8ball/index.html",
+    "main.fb3a7ce8.css.map": "/genz8ball/static/css/main.fb3a7ce8.css.map",
+    "main.2d60663c.js.map": "/genz8ball/static/js/main.2d60663c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fb3a7ce8.css",
+    "static/js/main.2d60663c.js"
+  ]
+}
